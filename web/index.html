@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>石琦的个人主页</title> <!-- 更新标题 -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f8ff;
+      /* 背景色 */
+      background-image: url('images/XHS_XHS_169536647342221695366500913.jpg');
+      /* 替换为指定图片 */
+      background-size: cover;
+      /* 使背景图覆盖整个页面 */
+      background-repeat: no-repeat;
+      /* 不重复背景图 */
+    }
+
+    header {
+      background: rgba(255, 0, 0, 0.8);
+      /* 红色半透明背景 */
+      text-align: center;
+      padding: 20px;
+      border-bottom: 5px solid #008000;
+      /* 绿色边框 */
+    }
+
+    h1 {
+      font-family: 'Courier New', Courier, monospace;
+      /* 艺术字体 */
+      color: #fff;
+      /* 白色标题颜色 */
+      text-shadow: 2px 2px 4px #000;
+      /* 标题阴影 */
+    }
+
+    .carousel {
+      width: 100%;
+      height: 60vh;
+      /* 自适应高度 */
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+      display: none;
+      /* 隐藏所有图片 */
+    }
+
+    .active {
+      display: block;
+      /* 显示当前图片 */
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #008000;
+      /* 绿色 */
+      color: white;
+      border-top: 5px solid #ff0000;
+      /* 红色边框 */
+    }
+
+    #snake-game {
+      background-color: #fff;
+      /* 白色背景 */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      /* 阴影效果 */
+    }
+
+    #snakeCanvas {
+      border: 2px solid #ff0000;
+      /* 红色边框 */
+      border-radius: 10px;
+    }
+
+    p {
+      color: #333;
+      /* 深色文本 */
+    }
+
+    /* 手机适配样式 */
+    @media (max-width: 600px) {
+      header {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 24px;
+        /* 调整标题字体大小 */
+      }
+
+      #chat {
+        width: 90%;
+        /* 聊天框宽度适应 */
+      }
+
+      #about {
+        padding: 10px;
+        /* 添加内边距 */
+      }
+
+      #snakeCanvas {
+        width: 100%;
+        /* 画布宽度适应 */
+        height: auto;
+        /* 高度自适应 */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>石琦的个人主页</h1> <!-- 更新标题 -->
+  </header>
+
+  <div class="carousel">
+    <img src="image1.jpg" class="active" alt="描述1">
+    <img src="image2.jpg" alt="描述2">
+    <img src="image3.jpg" alt="描述3">
+    <!-- 轮播图集 -->
+  </div>
+
+  <section id="chatbox" style="text-align: center; margin-top: 20px;">
+    <h2>AI 聊天对话框</h2>
+    <div id="chat"
+      style="border: 1px solid #008000; border-radius: 10px; padding: 10px; width: 300px; margin: 0 auto; background-color: #fff;">
+      <div id="messages"
+        style="height: 200px; overflow-y: auto; margin-bottom: 10px; border: 1px solid #ccc; padding: 5px;"></div>
+      <input type="text" id="userInput" placeholder="输入你的消息..." style="width: 70%; padding: 5px;">
+      <button id="sendButton" style="padding: 5px;">发送</button>
+    </div>
+  </section>
+
+  <section id="about">
+    <img src="images/我.png" alt="个人照片" width="256" height="256"> <!-- 更新头像位置 -->
+    <p style="color: red; font-weight: bold;">性别：男</p> <!-- 修改性别样式 -->
+    <p style="color: red; font-weight: bold;">爱好：计算机游戏开发</p> <!-- 修改爱好样式 -->
+    <p style="color: red; font-weight: bold;">自我介绍：大家好，</p> <!-- 修改自我介绍样式 -->
+    <p style="color: red; font-weight: bold;">我是新来的游戏开发程序员，很高兴加入这个充满活力与创意的团队。虽然我可能还是个编程界的新手，但我对游戏的热爱和对技术的追求可是一点都不含糊。</p>
+    <p style="color: red; font-weight: bold;">
+      我自小就对电子游戏充满了浓厚的兴趣，从简单的像素跳跃到复杂的策略布局，每一款游戏都让我着迷不已。随着年岁的增长，这份热爱逐渐转化为想要亲手创造游戏世界的冲动。于是，我选择了游戏开发这条既充满挑战又极具魅力的道路。</p>
+    <p style="color: red; font-weight: bold;">
+      在大学里，我专攻计算机科学，并且特别注重学习与游戏开发相关的课程和技能。虽然我现在还称不上是专家，但我已经掌握了编程的基础，包括C++、Java以及Unity等游戏开发引擎的使用。我热爱解决问题，喜欢挑战自己，我相信在不断的学习和实践中，我能够快速成长。
+    </p>
+    <p style="color: red; font-weight: bold;">
+      说到个人特点，我可能稍微有点胖乎乎的，但这并不影响我灵活的思维和敏捷的手指在键盘上飞舞。而且，我还自认为自己有一张"电脑高手"的脸——虽然这更多是朋友们的玩笑话，但我也确实以此为动力，努力提升自己的技术能力。</p>
+    <p style="color: red; font-weight: bold;">
+      现在，作为团队的新成员，我渴望能够在这里学到更多，贡献自己的力量。我期待着和大家一起，在夜晚的黑底绿字电脑屏幕前，共同奋斗，创造出让玩家喜爱的游戏作品。</p>
+    <p style="color: red; font-weight: bold;">谢谢大家，很高兴能和大家共事！</p>
+  </section>
+
+  <!-- 添加贪吃蛇小游戏 -->
+  <section id="snake-game" style="text-align: center; margin-top: 20px;">
+    <h2>贪吃蛇小游戏</h2>
+    <canvas id="snakeCanvas" width="400" height="400" style="background-color: #fff;"></canvas>
+    <p style="font-size: 16px; color: #555;">使用方向键控制蛇的移动，吃掉红色食物以得分！</p>
+    <script>
+      const canvas = document.getElementById('snakeCanvas');
+      const ctx = canvas.getContext('2d');
+      let snake = [{ x: 10, y: 10 }];
+      let direction = { x: 0, y: 0 };
+      let food = { x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20) };
+      let score = 0;
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'green';
+        snake.forEach(part => ctx.fillRect(part.x * 20, part.y * 20, 18, 18));
+        ctx.fillStyle = 'red';
+        ctx.fillRect(food.x * 20, food.y * 20, 18, 18);
+      }
+
+      function update() {
+        const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
+        snake.unshift(head);
+        if (head.x === food.x && head.y === food.y) {
+          score++;
+          food = { x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20) };
+        } else {
+          snake.pop();
+        }
+      }
+
+      function gameLoop() {
+        update();
+        draw();
+        setTimeout(gameLoop, 100);
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowUp') direction = { x: 0, y: -1 };
+        if (event.key === 'ArrowDown') direction = { x: 0, y: 1 };
+        if (event.key === 'ArrowLeft') direction = { x: -1, y: 0 };
+        if (event.key === 'ArrowRight') direction = { x: 1, y: 0 };
+      });
+
+      gameLoop();
+    </script>
+  </section>
+
+  <footer>
+    <p>社交媒体链接</p>
+    <a href="https://weibo.com" target="_blank">微博</a>
+    <a href="https://weixin.com" target="_blank">微信</a>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+  </footer>
+
+  <script>
+    // 轮播图切换逻辑
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel img');
+    const totalImages = images.length;
+
+    function showNextImage() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % totalImages;
+      images[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextImage, 5000); // 每5秒切换
+  </script>
+</body>
+
+</html>
